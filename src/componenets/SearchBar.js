@@ -2,11 +2,12 @@ import React from 'react'
 
 class SearchBar extends React.Component {
 
+    //tracks what is in the searchbar
     state = {term: ' '}
     
     onFormSubmit=(event)=>{
+        //prevents page refresh when enter key is pressed
         event.preventDefault()
-        
         this.props.onSubmit(this.state.term)
     }
 
@@ -15,7 +16,6 @@ class SearchBar extends React.Component {
             <div className="ui segment">
                 <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
-                    {/* name of search type here */}
                         <label>Search</label>
                         <input 
                         value={this.state.term} 
@@ -30,12 +30,6 @@ class SearchBar extends React.Component {
 
 export default SearchBar
 
-/////////////////to use////////////////////
-
-/* 
-<div className='ui container' style={{marginTop: '5%'}}>
-    <SearchBar />
-</div> 
-*/
-
-////google & import lastest semantic.min.css file from CDN (put link into index.js)////
+/////////////////to use this component elsewhere////////////////////
+//google & import lastest semantic.min.css file from CDN (put link into index.js)////
+//wrap parent div with a "ui container" class
